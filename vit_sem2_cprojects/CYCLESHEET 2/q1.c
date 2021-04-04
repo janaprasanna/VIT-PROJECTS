@@ -2,14 +2,21 @@
 #include<math.h>
 int main()
 {
-  double y,x=0.0,z,i ;
-  for(i=0.00;i<10.00;i++)
+  double y,x;float i,j;
+  printf("X  ");
+  for(i=0.0;i<=0.9;i=i+0.1)
   {
-    for(z=i;z<=(i+0.90);z=z+0.10)
+    printf(" %.1f\t   |",i);
+  }
+  for(i=0.0;i<=10.0;i++)
+  {
+    printf("%.1lf|",i);
+    for(j=0.0;j<=0.9;j=j+0.1)
     {
-      x = z;
-      y=exp(z);
-      printf("exp(%0.1lf): %lf\n",z,y);
+      
+      x = i + j;
+      y = exp(-x);
+      printf(" %.4lf\t ",y);
     }
     printf("\n");
   }
