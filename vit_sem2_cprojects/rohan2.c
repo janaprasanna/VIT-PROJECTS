@@ -1,5 +1,5 @@
 # include<stdio.h>
-int main()
+int main() //20BCA0047
 {
     int n;
     n= 5;
@@ -8,7 +8,7 @@ int main()
     for(i = 0; i<5;i++)
     {
         scanf("%c",&arr[i]);
-    }
+    } 
     for(i = 0; i<5;i++)
     {
         printf("%d ",arr[i]);
