@@ -1,5 +1,5 @@
 # include<stdio.h>
-int main() //20BCA0047
+int main() //20BCA
 {
     int n;
     n= 5;
