@@ -9,7 +9,7 @@ void main()
         
     }
     // program 2
-    a=5;b=6;
+    a=3;b=6;
     printf("the given number is %s",a%2==0?"even":"odd");
-    printf("")
+    printf("\nthe given number is %s",a%2==0?"not prime":"");
 }
