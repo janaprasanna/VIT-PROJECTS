@@ -22,7 +22,7 @@ void main()
           printf("printing in ascending order : \n");
           for(i=0;i<n;i++)
           {
-            for(j=i;j<n;j++)
+            for(j=i+1;j<n;j++)
             {
               if(list[i]>list[j])
               {
@@ -40,7 +40,7 @@ void main()
           printf("printing in ascending order : \n");
           for(i=0;i<n;i++)
           {
-            for(j=i;j<n;j++)
+            for(j=i+1;j<n;j++)
             {
               if(list[i]<list[j])
               {

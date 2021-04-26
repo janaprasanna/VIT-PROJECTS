@@ -27,4 +27,6 @@ void main()
     }
     if(status==1)
         printf("\nthe given strings are anagrams.");
+    else    
+        printf("\nthe given strings are not anagram.");
 }
