@@ -20,19 +20,19 @@ void main()
             
             e_space=i;
             
-            strrep(str,word,replace,s_space,e_space);
+            strrep(&str,word,replace,s_space,e_space);
             s_space=e_space+1;
         }
         
    
     }
 }
-void strrep(char str[],char word[],char replace[],int s_space,int e_space)
+void strrep(char *str,char word[],char replace[],int s_space,int e_space)
 {
     char dummytext[10]="";int j=0,i;
     for(int i=s_space,j=0 ;i<e_space;i++,j++)
     {
-            dummytext[j]=str[i];
+            dummytext[j]= *(str+i);
     }
     //printf("\ndummytext= %s",dummytext);  //checking if the words are properly copied.
     if(strcmp(dummytext,word)==0)
@@ -40,11 +40,11 @@ void strrep(char str[],char word[],char replace[],int s_space,int e_space)
     
             for(j=0,i=s_space;i<e_space;j++,i++)
             {
-                str[i]=replace[j];
+                *(str+i)=replace[j];
             }
             
         
     }
-    printf("\nmodifed:%s",str);
+    printf("\n\nmodifed:%s",str);  //checking
 
 }
