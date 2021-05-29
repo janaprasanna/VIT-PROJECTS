@@ -19,6 +19,7 @@ void main()
 	printf("Rollnumber\tsubject1\tsubject2\tsubject3\t\n");
 	for(i=0;i<n;i++)
 	{
+		temp=0;
 		printf("%d\t\t",rollnumber[i]);
 		for(j=0;j<3;j++)
 			{
