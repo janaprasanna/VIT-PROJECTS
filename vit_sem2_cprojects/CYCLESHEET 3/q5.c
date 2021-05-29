@@ -4,7 +4,7 @@ char strrep(char*,char *,char *,int ,int );
 void main()
 {
     char str[100],word[10],replace[10];int i,e_space=0,s_space=0;//e_space = ending space; s_space=starting space
-    int temp=0;
+ 
     printf("enter a string:");
     gets(str);
     printf("enter the word that needs to be removed from the string:");
@@ -13,19 +13,22 @@ void main()
     gets(replace);
     printf("\nafter replacing:%s",str);
 
-    for(i=0;i<strlen(str);i++)  // 0 -  9
+    for(i=0;i<=strlen(str);i++)  // 0 -  9
     {
         if(str[i]==' ')   //i=5 has " "
         {
-            e_space=i;  
-            temp=e_space; 
+            e_space=i-1;  
+             
             strrep(str,word,replace,s_space,e_space); // 0 - 5
-            s_space=e_space+1;
-            printf("\ns_space=%d",s_space);
+            s_space=e_space+2;
+           // printf("\ns_space=%d",s_space);
         }
         else if(str[i]=='\0')
         {
-            e_space=strlen(str);
+            e_space=strlen(str)-1;
+            
+            printf("\ne_space=%d",e_space);
+            printf("\ns_space=%d",s_space);
             strrep(str,word,replace,s_space,e_space);
          
         }
@@ -34,12 +37,13 @@ void main()
 char strrep(char str[],char word[],char replace[],int s_space,int e_space)
 {
     char dummytext[10];int j=0,i;
-    for(i=s_space,j=0 ;i<e_space;i++,j++)
-    {
+    for(i=s_space,j=0 ;i<=e_space;i++,j++)
+    { 
             dummytext[j]= str[i];
     }
-    printf("\ne_space=%d",e_space);
-    printf("\ndummytext= %s",dummytext);  //checking if the words are properly copied.
+    dummytext[j]='\0';
+  
+    printf("\ndummytext=%s",dummytext);  //checking if the words are properly copied.
     /*if(strcmp(dummytext,word)==0)
     { 
     
