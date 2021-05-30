@@ -62,7 +62,7 @@ void strrep(char str[],char word[],char replace[],int s_space,int e_space)
             str[i]='\0';*/
             if(len1>len2)       //len1=word;len2=replace
             {
-            	str[i]=' ';
+            	//str[i]=' ';
                 j=e_space+1;
                 for(;i<strlen(temp);)
                 {
@@ -71,7 +71,7 @@ void strrep(char str[],char word[],char replace[],int s_space,int e_space)
             }
             else
             {
-               // str[i]=' ';  //since i occupies an extra character in place of space
+               str[i]=' ';  //since i occupies an extra character in place of space
                 j=e_space+1;
                 for(;temp[j];)
                 {
