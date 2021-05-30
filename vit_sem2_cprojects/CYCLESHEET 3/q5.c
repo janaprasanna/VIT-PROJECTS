@@ -1,6 +1,6 @@
 #include<stdio.h>
 #include<string.h>
-char strrep(char*,char *,char *,int ,int );
+void strrep(char*,char *,char *,int ,int );
 void main()
 {
     char str[100],word[10],replace[10];int i,e_space=0,s_space=0;//e_space = ending space; s_space=starting space
@@ -11,7 +11,7 @@ void main()
     gets(word);
     printf("enter the word that should be replaced within that position:");
     gets(replace);
-    printf("\nafter replacing:%s",str);
+    
 
     for(i=0;i<=strlen(str);i++)  // 0 -  9
     {
@@ -32,8 +32,9 @@ void main()
          
         }
     }
+    printf("\nafter replacing:%s",str);
 }
-char strrep(char str[],char word[],char replace[],int s_space,int e_space)
+void strrep(char str[],char word[],char replace[],int s_space,int e_space)
 {
     
   
@@ -77,6 +78,6 @@ char strrep(char str[],char word[],char replace[],int s_space,int e_space)
                 }
             }
     }
-    printf("\n\nmodifed:%s",str);  //checking
-    return str;
+    
+    //printf("\n\nmodifed:%s",str);  //checking
 }
