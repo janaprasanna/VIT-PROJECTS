@@ -27,8 +27,7 @@ void main()
         {
             e_space=strlen(str)-1;
             
-            printf("\ne_space=%d",e_space);
-            printf("\ns_space=%d",s_space);
+           
             strrep(str,word,replace,s_space,e_space);
          
         }
@@ -36,22 +35,48 @@ void main()
 }
 char strrep(char str[],char word[],char replace[],int s_space,int e_space)
 {
-    char dummytext[10];int j=0,i;
+    
+  
+    char dummytext[10];int j=0,i=0;char temp[100];
+    strcpy(temp,str);
+    int len1=strlen(word),len2=strlen(replace);
+    //printf("\ntemp=%s",temp);
     for(i=s_space,j=0 ;i<=e_space;i++,j++)
     { 
             dummytext[j]= str[i];
     }
     dummytext[j]='\0';
-  
-    printf("\ndummytext=%s",dummytext);  //checking if the words are properly copied.
+    //printf("\ndummytext=%s",dummytext);  //checking if the words are properly copied.
     if(strcmp(dummytext,word)==0)
     { 
-            for(j=0,i=s_space;i<=e_space;j++,i++)
+            for(j=0,i=s_space;j<strlen(replace);j++,i++)
             {
-                str[i]= replace[j];
+                str[i]= replace[j];     //0 1 2 
+            }
+            //printf("\ni=%d",i);
+            /*for(;temp[i];)
+            {
+                str[i++]=temp[i++];
+            }
+            str[i]='\0';*/
+            if(len1>len2)       //len1=word;len2=replace
+            {
+                j=e_space+1;
+                for(;i<strlen(temp);)
+                {
+                    str[i++]=temp[j++];
+                }
+            }
+            else
+            {
+                str[i]=' ';  //since i occupies an extra character in place of space
+                j=e_space+2;
+                for(;temp[j];)
+                {
+                    str[++i]=temp[j++];
+                }
             }
     }
     printf("\n\nmodifed:%s",str);  //checking
-    return *str;
-
+    return str;
 }
