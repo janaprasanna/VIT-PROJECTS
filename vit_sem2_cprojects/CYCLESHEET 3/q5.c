@@ -12,7 +12,7 @@ void main()
     printf("enter the word that should be replaced within that position:");
     gets(replace);
     
-
+ 
     for(i=0;i<=strlen(str);i++)  // 0 -  9
     {
         if(str[i]==' ')   //i=5 has " "
@@ -62,11 +62,11 @@ void strrep(char str[],char word[],char replace[],int s_space,int e_space)
             str[i]='\0';*/
             if(len1>len2)       //len1=word;len2=replace
             {
-            	//str[i]=' ';
+                str[i]=' ';
                 j=e_space+1;
                 for(;i<strlen(temp);)
                 {
-                    str[++i]=temp[j++];
+                    str[i++]=temp[j++];
                 }
             }
             else
