@@ -2,7 +2,7 @@
 float roundoff(float);
 int main()
 {
-    float x=45.67;
+    float x=45.675;
     float result;
     result = roundoff(x);
     printf("after rounding : %f",result);
@@ -21,6 +21,6 @@ float roundoff(float x)
     // then type cast to int so value is 3767
     // then divided by 100 so the value converted into 37.67
     float value = (int)(x * 100 + 0.5);
-    return (float)value / 100;
+    return value / 100;
 }
     
