@@ -71,10 +71,10 @@ void strrep(char str[],char word[],char replace[],int s_space,int e_space)
             else
             {
                 str[i]=' ';  //since i occupies an extra character in place of space
-                j=e_space+2;
+                j=e_space+1;
                 for(;temp[j];)
                 {
-                    str[++i]=temp[j++];
+                    str[++i]=temp[++j];
                 }
             }
     }
