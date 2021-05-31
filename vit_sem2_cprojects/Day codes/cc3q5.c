@@ -57,20 +57,10 @@ void strreplace(char str[],char word[],char replace[])
         str[k]=replace[j];
     }
 
-    if(str[k]!=' ')
+    str[k]=' ';
+    for(;temp[end];)
     {
-        str[k]=' ';
-        for(;temp[end];)
-        {
-            str[++k]=temp[++end];
-        }
-    }
-    else
-    {
-        for(k;temp[end];)
-        {
-            str[++k]=temp[end++];
-        }
+        str[++k]=temp[++end];
     }
     
 }
