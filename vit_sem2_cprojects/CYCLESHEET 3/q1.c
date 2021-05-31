@@ -13,8 +13,8 @@ int main()
     printf("in upper: %s",str1);
     //copystring(str1,str2);
     //result=userstrcmp(str1,str2);
-    //userconcat(str1,str2);
-    //printf("\nafter joined : %s",str1);
+    userconcat(str1,str2);
+    printf("\nafter joined : %s",str1);
     //printf("original string : %s",str1);
     //printf("\ncopied string : %s",str2);
     //printf("\nstring compare results : %d",result);
@@ -68,8 +68,8 @@ int userstrcmp(char s1[],char s2[])
 void userconcat(char s1[],char s2[])
 {
     int len1=strlen(s1),len2=strlen(s2),i,j;
-    s1[len1]=' ';
-    for(i=len1+1,j=0;j<len2;j++,i++)
+    //s1[len1]=' ';
+    for(i=len1,j=0;j<len2;j++,i++)
     {
         s1[i]=s2[j];
     }
