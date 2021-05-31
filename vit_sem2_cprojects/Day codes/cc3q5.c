@@ -62,5 +62,6 @@ void strreplace(char str[],char word[],char replace[])
     {
         str[++k]=temp[++end];
     }
+    //edited
     
 }
