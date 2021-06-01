@@ -34,9 +34,9 @@ void stringReplace(const char *str, const char *subStr, const char *replaceStr)
         }
     }
     // char newString[i + count * (len1 - len2) + 1]; --> allocating array's size by finding the difference between the length of 2 strings
- 
+    char newString[(i+2)+1];
     // Or use this if you're sure that the string won't exceed 1000 char
-    char newString[1000];
+    //char newString[1000];
  
     //--------- Replacing substring----------
  
