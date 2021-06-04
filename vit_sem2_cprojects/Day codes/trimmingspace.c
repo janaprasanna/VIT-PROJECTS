@@ -19,7 +19,7 @@ int main()
     {
         if(s[i]!=' '&&s[i]!='\t')
             printf("\n%d",j);
-            j=1;  // i is copied to j so that j+1 reaches the end of string with no spaces.
+            j=i;  // i is copied to j so that j+1 reaches the end of string with no spaces.
     }
     s[j+1]='\0'; //terminating the index before the trailing space
     printf("\nAfter trimming :%s",s);
