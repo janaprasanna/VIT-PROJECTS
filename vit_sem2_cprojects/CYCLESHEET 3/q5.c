@@ -48,7 +48,7 @@ void strrep(char str[],char word[],char replace[],int s_space,int e_space)
     }
     dummytext[j]='\0';
     //printf("\ndummytext=%s",dummytext);  //checking if the words are properly copied.
-    if(strcmpi(dummytext,word)==0)
+    if(strcmp(dummytext,word)==0)
     { 
             for(j=0,i=s_space;j<strlen(replace);j++,i++)
             {
