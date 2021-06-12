@@ -7,6 +7,7 @@ void main()
         char schoolname[50];
         char address[50];
         char type[15];
+        char board[10];
         int contact;
     }s[3];
     for(i=0;i<3;i++)
@@ -16,12 +17,15 @@ void main()
         fflush(stdin);
         gets(s[i].schoolname);
         fflush(stdin);
-        printf("\naddress:");
+        printf("address:");
         gets(s[i].address);
         fflush(stdin);
-        printf("\nmedium:");
+        printf("enter board(central/state/ICSE):");
+        gets(s[i].board);
+        fflush(stdin);
+        printf("medium:");
         gets(s[i].type);
-        printf("\ncontact details:");
+        printf("contact details:");
         scanf("%d",&s[i].contact);
     }
     printf("\nschool details:\n");
@@ -34,6 +38,5 @@ void main()
         printf("\naddress:%s",s[i].address);
         printf("\nMedium:%s",s[i].type);
         printf("\ncontact details:%d",s[i].contact);
-        printf("\n---------------------------------------\n");
     }
 }
