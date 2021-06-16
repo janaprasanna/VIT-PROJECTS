@@ -1,25 +1,28 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main() {
-    char sentence[1000];
-    printf("enter your resume below:\n");
-    fgets(sentence,1000,stdin);
-    // creating file pointer to work with files
-    FILE *fptr;
+int main()
+{
 
-    // opening file in writing mode
-    fptr = fopen("/Users/janaprasanna/My Drive/program.txt", "w");
-
-    // exiting program 
-    if (fptr == NULL) {
-        printf("Error!");
-        exit(1);
-    }
     
-    fscanf(fptr,"%s",sentence);
-    //fgets(sentence, sizeof(sentence), stdin);
-    fprintf(fptr, "%s", sentence);
-    fclose(fptr);
-    return 0;
+   int num;char str[100];
+   FILE *fptr;
+
+   // use appropriate location if you are using MacOS or Linux
+   fptr = fopen("/Users/janaprasanna/My Drive/program.txt","w");
+
+   if(fptr == NULL)
+   {
+      printf("Error!");   
+      exit(1);             
+   }
+
+   
+   if((gets(str))!=EOF)
+   {
+       fprintf(fptr,"%s",str);
+   }
+   fclose(fptr);
+
+   return 0;
 }
