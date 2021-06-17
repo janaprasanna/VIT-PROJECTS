@@ -11,13 +11,13 @@ int main()
     int i,j,result;
     userlwr(str1);
     printf("in upper: %s",str1);
-    //copystring(str1,str2);
-    //result=userstrcmp(str1,str2);
+    copystring(str1,str2);
+    result=userstrcmp(str1,str2);
     userconcat(str1,str2);
     printf("\nafter joined : %s",str1);
-    //printf("original string : %s",str1);
-    //printf("\ncopied string : %s",str2);
-    //printf("\nstring compare results : %d",result);
+    printf("\noriginal string : %s",str1);
+    printf("\ncopied string : %s",str2);
+    printf("\nstring compare results : %d",result);
     return 0;
 }
 void copystring(char s1[],char s2[])
