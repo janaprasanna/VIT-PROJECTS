@@ -1,5 +1,5 @@
-# include <stdio.h>
-# include <string.h>
+#include <stdio.h>
+#include <string.h>
 
 int main()
 {
@@ -12,11 +12,11 @@ int main()
     
     //
     FILE *filepointer;
-    filepointer = fopen("D:/C FILE HANDLING/student.txt","r");
+    filepointer = fopen("/Users/janaprasanna/My Drive/student.txt","r");
     for(i = 0; i < 20;i++) //20 refers to number of lines in the file
     {
         fscanf( filepointer, "%s %s %s", regno, name,lname);
-        chk = stricmp(check,regno);
+        chk = strcmp(check,regno);
         if(chk == 0)
         {
             printf("STUDENT FOUND!\n");
