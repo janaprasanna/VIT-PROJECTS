@@ -2,10 +2,12 @@
 void space(int);
 void main()
 {
-    int x=1,a=5,b=10;
-    printf("%d",a);
-    space(x);
-    printf("%d",b);
+    int x=1,arr[5]={4,7,3,4,1},i;
+   for(i=0;i<5;i++)
+   {
+       printf("val%d=%d",i+1,arr[i]);
+       space(2);
+   }
 }
 void space(int x)
 {
