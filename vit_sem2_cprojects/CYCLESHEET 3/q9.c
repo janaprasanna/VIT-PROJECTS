@@ -9,7 +9,7 @@ int main()
    FILE *fptr;
 
    // use appropriate location if you are using MacOS or Linux
-   fptr = fopen("/Users/janaprasanna/My Drive/resume.txt","w");
+   fptr = fopen("D:/C FILE HANDLING/resume.txt","w");
 
    if(fptr == NULL)
    {
