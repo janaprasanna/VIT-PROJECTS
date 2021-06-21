@@ -1,8 +1,8 @@
 #include<stdio.h>
 #include<string.h>
 #define SIZE 2
-
-void main()
+void checkchem(char [SIZE][15] ,float marks[SIZE][3]);
+int main()
 {
     char sname[SIZE][15];float marks[SIZE][3] ;     // stdno, maths, phy , chem
     int i,j;
@@ -16,17 +16,27 @@ void main()
                scanf("%f",&marks[i][j]);
            }
     }
-    checkchem(sname[SIZE],marks);
+    checkchem(sname,marks);
+    return 0;
     
 }
-void checkchem(char sname[SIZE][],float marks[][])
+void checkchem( char sname[SIZE][15], float marks[][3] )
 {
-    int temp=0,i,j;
-    for(i=0,j=0;i<SIZE;i++)
+    int temp = 0, i, j;
+    for(i=0,j=2;i<SIZE;i++)
     {
         if(temp<marks[i][j])
         {
             temp=marks[i][j];
         }
     }
+    printf("Toppers in chemistry:\n");
+    for(i=0,j=2;i<SIZE;i++)
+    {
+        if(temp==marks[i][j])
+        {
+            printf("%s",sname[i]);
+        }
+    }
+    
 }
