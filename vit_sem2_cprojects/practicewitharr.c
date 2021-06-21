@@ -2,6 +2,7 @@
 #include<string.h>
 #define SIZE 2
 void checkchem(char [SIZE][15] ,float marks[SIZE][3]);
+void checkphy(char [SIZE][15],float marks[SIZE][3]);
 int main()
 {
     char sname[SIZE][15];float marks[SIZE][3] ;     // stdno, maths, phy , chem
@@ -17,6 +18,7 @@ int main()
            }
     }
     checkchem(sname,marks);
+    checkphy(sname,marks);
     return 0;
     
 }
@@ -30,7 +32,7 @@ void checkchem( char sname[SIZE][15], float marks[][3] )
             temp=marks[i][j];
         }
     }
-    printf("Toppers in chemistry:\n");
+    printf("\nToppers in chemistry:\n");
     for(i=0,j=2;i<SIZE;i++)
     {
         if(temp==marks[i][j])
@@ -39,4 +41,24 @@ void checkchem( char sname[SIZE][15], float marks[][3] )
         }
     }
     
+}
+void checkphy(char sname[SIZE][15],float marks[][3])
+{
+    int temp1=0,temp2=0,i,j;
+    for(i=0,j=1;i<SIZE;i++)
+    {
+        if(temp1<marks[i])
+        {
+            temp2=temp1;
+            temp1=marks[i][j];
+        }
+    }
+    printf("\n2nd Toppers in physics are:\n");
+    for(i=0,j=1;i<SIZE;i++)
+    {
+        if(temp2==marks[i][j])
+        {
+            printf("%s",sname[i]);
+        }
+    }
 }
