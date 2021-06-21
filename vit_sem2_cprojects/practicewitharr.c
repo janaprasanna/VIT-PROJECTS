@@ -19,7 +19,7 @@ void main()
     checkchem(sname[SIZE],marks);
     
 }
-void checkchem(char sname[SIZE],float marks[][])
+void checkchem(char sname[SIZE][],float marks[][])
 {
     int temp=0,i,j;
     for(i=0,j=0;i<SIZE;i++)
