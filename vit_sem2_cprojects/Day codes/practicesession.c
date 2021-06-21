@@ -32,7 +32,7 @@ void main()
 }
 void checkchem(struct skl s[SIZE])
 {
-     int temp=s[0].chem,i;
+     float temp=s[0].chem;int i;
     for(i=0;i<SIZE;i++)
     {
         if(temp<=s[i].chem)
