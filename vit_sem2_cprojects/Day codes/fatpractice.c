@@ -2,7 +2,7 @@
 int main ()
 {
  
-   FILE *fp,*fs;
+   FILE *fp;
    int num,number;
    fp = fopen("/Users/janaprasanna/My Drive/test.txt","w");
     printf("enter numbers(-1) to terminate:\n");
@@ -13,19 +13,16 @@ int main ()
       {
         break;
       }
-      //putw(num,fp);
-      fprintf(fp,"\n%d",num);
+      putw(num,fp);
+     
    }
-  /* putw(i,fp);
-   putw(j,fp);
-   putw(k,fp);*/
    fclose(fp);
  
-   fs = fopen("/Users/janaprasanna/My Drive/test.txt","r");
+   fp = fopen("/Users/janaprasanna/My Drive/test.txt","r");
    
-   while((getw(fs))!=EOF)
+   while((number=getw(fp))!=EOF)
    {
-      number= getw(fs);
+    
       printf("Data in test.txt file is %d \n", number);
    }
    fclose(fp);
