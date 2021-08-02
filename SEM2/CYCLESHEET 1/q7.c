@@ -1,5 +1,5 @@
 #include <stdio.h>
-#include<conio.h>
+
 int main()
 {
   int i;
@@ -14,4 +14,5 @@ int main()
       printf("\n%d=%c",i,i);
     }
   }
+  return 0;
 }
