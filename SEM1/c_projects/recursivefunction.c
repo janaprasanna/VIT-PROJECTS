@@ -1,4 +1,4 @@
-nclude<stdio.h>
+#include<stdio.h>
 int fun(int n)
 {
   if(n!=0)
