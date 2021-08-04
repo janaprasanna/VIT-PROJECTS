@@ -30,6 +30,7 @@ char *stringrev(char *str)
         return str;
 
     for(start=str,end=str+strlen(str)-1 ;start < end ; start++,end--)
+    //total 13 chars so is base =13 then --> 2 * 13 = end address
     {                                           // end = 13 + (13-1)
         c=*start;                        // vit vellore - 11
                                           //c = v      start = v   end = e
