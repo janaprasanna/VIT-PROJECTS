@@ -6,15 +6,34 @@ void main()
 {
       int stack[SIZE], first=0, last=SIZE - 1,data;
       char choice;
-      do
-      {
-      printf("input data:");
-      scanf("%d",&data);
-      push(stack, data, &first, &last);
-      printf("\nDo you want to add more?");
-      fflush(stdin);
-      scanf("%c",&choice);
-      }while (choice == 'y' || choice == 'Y'&&last<SIZE);
+     
+     do
+     {
+            printf("\n\n\n1.push\n2.pop\n3.exit\n\n\n");
+            fflush(stdin);
+            scanf("%d",&choice);
+            switch (choice)
+            {
+                  case 1:
+                        printf("input data:");
+                        fflush(stdin);
+                        scanf("%d",&data);
+                        push(stack, data, &first, &last);
+                        break;
+                  
+                  case 2:
+                        pop(stack, &first, &last);
+                        break;
+
+            }
+            printf("\nstack: ");
+            for(int i=0;i<first;i++)
+                  printf("%d  ",stack[i]);
+            
+     } while (choice!=3);
+     
+     
+      
       
 }
 void push(int stack[],int data,int *f, int *l)
