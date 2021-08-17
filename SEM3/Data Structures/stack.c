@@ -1,11 +1,11 @@
 #include<stdio.h>
-#define SIZE 5
-void push(int [], int, int *, int *);
-void pop(int [], int *, int *);
+#define SIZE 3
+void push(int [], int, int *);
+void pop(int [], int *);
 void main()
 {
-      int stack[SIZE], first=0, last=SIZE - 1,data;
-      char choice;
+      int stack[SIZE], first=0, last=SIZE ,data;
+      int choice;
      
      do
      {
@@ -18,12 +18,16 @@ void main()
                         printf("input data:");
                         fflush(stdin);
                         scanf("%d",&data);
-                        push(stack, data, &first, &last);
+                        push(stack, data, &first);
                         break;
                   
                   case 2:
-                        pop(stack, &first, &last);
+                        pop(stack, &first);
                         break;
+
+                  default:
+                        printf("Invalid Operation details!!");
+
 
             }
             printf("\nstack: ");
@@ -36,33 +40,27 @@ void main()
       
       
 }
-void push(int stack[],int data,int *f, int *l)
+void push(int stack[],int data,int *f)
 {
       if(*f < 0)
             printf("\nstack underflow !!");
-      else if(*f >= SIZE)
+      else if(*f > SIZE-1)
             printf("\n stack is full. cannot insert !!");
       else 
       {
             printf("Data inserted successfully.\n");
-            printf("stack: ");
             stack[*f] = data;
             *f =  *f + 1;
-            for(int i=0;i<*f;i++)
-            {
-                  printf("%d,",stack[i]);
-            }
       }
 }
-void pop(int stack[], int *f, int *l)
+void pop(int stack[], int *top)
 {
-      if(*l == 0)
+      if(top < 0)
             printf("Stack is empty! cannot perform the operation.");
       else
       {
             printf("Data popped.");
-            printf("Data : %d",stack[*l]);
-            *l = *l - 1;
-
+            *top = *top - 1;
+            printf("Data : %d",stack[*top]);
       }
 }
