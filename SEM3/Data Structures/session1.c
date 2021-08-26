@@ -6,7 +6,7 @@ int main()
       char string[50];int length, midlen;
       printf("enter a string:");
       gets(string);
-      printf("input string:%s",string);
+      printf("\n\n\ninput string:%s",string);
       stringrev(&string);
       printf("\nReverse of the given string:%s",string);
       length = strlen(string);
@@ -15,7 +15,7 @@ int main()
       if (length%2 != 0)
             midlen = length/2;
       
-      printf("\nExpected output:");
+      printf("\n\n\nExpected output:");
       for(int i=midlen;i<strlen(string);i++)
             printf("%c",string[i]);
 
@@ -30,7 +30,7 @@ char *stringrev(char *str)
         return str;
 
     for(start=str,end=str+strlen(str)-1 ;start < end ; start++,end--)
-    //total 13 chars so is base =13 then --> 2 * 13 = end address
+    //total 13 chars so if base =13 then --> 2 * 13 = end address
     {                                           // end = 13 + (13-1)
         c=*start;                        // vit vellore - 11
                                           //c = v      start = v   end = e
