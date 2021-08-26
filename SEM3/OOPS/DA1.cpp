@@ -1,4 +1,4 @@
-/*question 1:*/
+/*question 1:
 #include<iostream>
 using namespace std;
 class vehicle
@@ -44,7 +44,7 @@ int main()
 
 }
 
-
+*/
 
 // question 2 : 
 /*
@@ -120,3 +120,78 @@ int main()
       S1.generategrade();
       S1.display();
 }  */
+
+/* static Binding
+#include <iostream>
+using namespace std;
+class static_class
+{
+      private:
+            int a, b;
+      public:
+            int fun1(int x)
+            { // first load() function.
+                  a=x;
+                  cout<<"The value of x is "<<x<<"\n";
+                  return a;
+            }
+            int fun2(int x, int y)
+            { //second load() function.
+                  a=x;
+                  b=y;
+                  cout<<"The value of x is "<<x<<"\n";
+                  cout<<"The value of y is "<<y<<"\n";
+                  cout<<"The value of x * y is "<<a*b<<"\n";
+                  return a*b;
+            }
+};
+int main()
+{
+      static_class O1;
+      O1.fun1(20); 
+      O1.fun2(20,40); 
+}
+*/
+
+/* Virtual functions and dyanamically binding
+#include <iostream>
+using namespace std;
+ 
+class base {
+public:
+    virtual void print()
+    {
+        cout << "print base class" << endl;
+    }
+ 
+    void show()
+    {
+        cout << "show base class" << endl;
+    }
+};
+ 
+class derived : public base {
+public:
+    void print()
+    {
+        cout << "print derived class" << endl;
+    }
+ 
+    void show()
+    {
+        cout << "show derived class" << endl;
+    }
+};
+ 
+int main()
+{
+    base* bptr;
+    derived d;
+    bptr = &d;
+ 
+    // virtual function, binded at runtime
+    bptr->print();
+ 
+    // Non-virtual function, binded at compile time
+    bptr->show();
+}*/
