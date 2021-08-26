@@ -1,11 +1,11 @@
+/*question 1:*/
 #include<iostream>
 using namespace std;
-/* question 1:
 class vehicle
 {
       private:
-            float acceleration, initial_vel, displacement;
-            int time;
+            float acceleration, initial_vel, displacement[4];
+            float time_interval[4]={2,3.5,5,6.5};
       public:
             void getdetails();
             void calculate(); 
@@ -17,16 +17,23 @@ void vehicle :: getdetails()
       cin>>acceleration;
       cout<<"Input initial velocity(ms):";
       cin>>initial_vel;
-      cout<<"Enter the time(s) interval upto which the displacement has to be calculated:";
-      cin>>time;
+      
 }
 void vehicle :: calculate()
 {
-      displacement = (initial_vel * time) + ((acceleration*(time*time))/2);
+      for(int i=0;i<4;i++)
+      {
+            displacement[i] = (initial_vel * time_interval[i]) + ((acceleration*(time_interval[i]*time_interval[i]))/2);
+      }
+      cout<<"\n";
 }
 void vehicle :: display()
 {
-      cout<<"The vehicle has been displaced by: "<<displacement<<" metres";
+      cout<<"Time intervals\tAcceleration\tinitial velocity\tDisplacement\n";
+      for(int i=0;i<4;i++)
+      {
+            cout<<time_interval[i]<<"\t\t\t"<<acceleration<<"\t\t\t"<<initial_vel<<"\t\t\t"<<displacement[i]<<"\n";
+      }
 }
 int main()
 {
@@ -35,12 +42,14 @@ int main()
       D1.calculate();
       D1.display();
 
-}*/
+}
 
 
 
-/* question 2 : */
+// question 2 : 
 /*
+#include<iostream>
+using namespace std;
 class gradegenerator
 {
       union  // anonymous union
