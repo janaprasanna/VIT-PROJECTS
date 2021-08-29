@@ -10,7 +10,7 @@ int main()
       cout<<"\n\nenter the number of elements to be inserted to the array:\n";
       cin>>n;
       float list[n];
-      cout<<"\n\nEnter "<<n<<"to the array:\n";
+      cout<<"\n\nEnter "<<n<<"elements to the array:\n";
       for(int i=0;i<n;i++)
       {
             cin>>list[i];
