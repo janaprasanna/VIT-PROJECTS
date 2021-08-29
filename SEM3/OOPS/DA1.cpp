@@ -43,11 +43,10 @@ int main()
       D1.display();
 
 }
-
 */
 
 // question 2 : 
-/*
+
 #include<iostream>
 using namespace std;
 class gradegenerator
@@ -119,7 +118,7 @@ int main()
       S1.validID();
       S1.generategrade();
       S1.display();
-}  */
+}  
 
 /* static Binding
 #include <iostream>
