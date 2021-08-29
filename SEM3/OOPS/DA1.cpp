@@ -45,7 +45,7 @@ int main()
 }
 */
 
-// question 2 : 
+/* question 2 : */
 
 #include<iostream>
 using namespace std;
@@ -55,24 +55,23 @@ class gradegenerator
             {
                   long int aathar_No;
                   char Driving_License_No;
-                  char Family_Card_No;
                   char PAN_Card_No;
-                  char Passport_No;
             };
       private:
-            float marks1, marks2, marks3, avg;
+            float marks1, marks2, marks3, avg; int n;
             char reg_no[10], grade;
             
       public:
             void validID();
-            void getmarks();
+            void getmarks(int i);
             void generategrade();
             void display();
 };
-void gradegenerator :: getmarks()
+void gradegenerator :: getmarks(int i)
 {
-    
+      cout<<"\nstudent "<<i<<"details:\n";
       cout<<"Enter Reg No:";
+      fflush(stdin);
       gets(reg_no);
       cout<<"Input Marks(out of 100) in CAT 1:";
       cin>>marks1;
@@ -83,8 +82,27 @@ void gradegenerator :: getmarks()
 }
 void gradegenerator :: validID()
 {
-      cout<<"Enter Govt proof ID: ";
-      cin>>aathar_No;
+      int choice;
+      cout<<"\nchoose the Gov ID :";
+      cout<<"\n1.Aadhar number\n2.PAN card number\n3.Driving license number";
+      cin>>choice;
+      switch (choice)
+      {
+      case 1:
+            cout<<"Enter aadhar number: ";
+            cin>>aathar_No;
+            break;
+      case 2:
+            cout<<"Enter PAN card number: ";
+            cin>>PAN_Card_No;
+            break;
+      case 3:
+            cout<<"Enter driving license number: ";
+            cin>>Driving_License_No;
+            break;
+      
+      }
+      
 }
 void gradegenerator :: generategrade()
 {
@@ -113,12 +131,27 @@ void gradegenerator :: display()
 
 int main()
 {
-      class gradegenerator S1;
-      S1.getmarks();
-      S1.validID();
-      S1.generategrade();
-      S1.display();
+      int n;
+      class gradegenerator S[100];
+      cout<<"Enter number of students:";
+      cin>>n;
+      for(int i=0;i<n;i++)
+      {
+            S[i].getmarks(i+1);
+            S[i].validID();
+            S[i].generategrade();
+      }
+      
+      
+      cout<<"\n\n\t\tREPORT\n\n";
+      for(int i=0;i<n;i++)
+      {
+           S[i].display();
+      }
+      
 }  
+
+
 
 /* static Binding
 #include <iostream>
