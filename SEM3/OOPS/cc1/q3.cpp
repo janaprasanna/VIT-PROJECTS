@@ -1,4 +1,5 @@
 #include<iostream>
+#include<string.h>
 using namespace std;
 int MaxOfThree(int , int, int);
 double MaxOfThree(double, double, double);
@@ -35,10 +36,15 @@ double MaxOfThree(double d1, double d2, double d3)
 }
 char* MaxOfThree(char str1[], char str2[], char str3[]) //char* - returning a pointer to a char
 {
-      if(strlen(str1)>strlen(str2) && strlen(str1)>strlen(str3))
+      if(strcmp(str1, str2)>0 && strcmp(str1, str3)>0)  // A    b    a 
+      {
             return str1;
-      else if(strlen(str2)>strlen(str1) && strlen(str2)>strlen(str3))
+      }
+      else if(strcmp(str2, str1)>0 && strcmp(str2, str3)>0)
+      {
             return str2;
+      }
       else  
             return str3;
+    
 }
