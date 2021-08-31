@@ -1,14 +1,16 @@
 #include<iostream>
+#include<string.h>
 using namespace std;
 class book
 {
       private:
-            char book_title[50];
             char author_name[50];
             float price;
             char year_of_pub[10];
       public:
+      char book_title[50];
       void addbooks();
+      void viewbooks();
       void searchbooks(char str[]);
       void displaybooks();
 };
@@ -24,6 +26,13 @@ void book :: addbooks()
       cout<<"\nEnter price: Rs.";
       cin>>price;
       cout<<"\n\n";
+}
+void book :: viewbooks()
+{
+      cout<<"\nBook Name: "<<book_title;
+      cout<<"\nAuthor: "<<author_name;
+      cout<<"\nBook price: Rs."<<price;
+      cout<<"\nYear of published:  "<<year_of_pub;
 }
 void book :: searchbooks(char name[])
 {
@@ -51,8 +60,8 @@ void book :: displaybooks()
 }
 int main()
 {
-      class book b[100];
-      char name[50];
+      class book b[100], B;
+      char name[50], temp[50];
       int n;
       cout<<"Enter book count:";
       cin>>n;
@@ -60,6 +69,28 @@ int main()
       {
             b[i].addbooks();
       }
+
+
+
+      cout<<"\nAdded books:\n";
+      B = b[0];
+      for(int i=1;i<n;i++)
+      {
+            for(int j=i;j<n;j++)
+            {
+                  if(strcmp(B.book_title, b[i].book_title)>0)
+                  {
+                        strcpy(temp, b[i].book_title);
+                        strcpy(b[i].book_title, B.book_title);
+                        strcpy(B.book_title, temp);
+                  }
+            }
+            B.viewbooks();
+      }
+
+
+
+
       cout<<"Enter author name :";
       fflush(stdin);
       gets(name);
