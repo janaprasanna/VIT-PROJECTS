@@ -42,7 +42,7 @@ int main()
 }
 int stack_op(int stk, int n)
 {
-      int choice, data, first=0, last=n;
+      int choice, data, first = 0, last = n, temp = n/2; 
       do
       {
             printf("\n\n\n1.push_even\n2.push_odd\n3.pop\n4.View\n5.exit\n\n\n");
@@ -58,8 +58,7 @@ int stack_op(int stk, int n)
                         {
                               if(data%2 == 0 )
                               {
-                                    last = n/2;
-                                    push(&stk, data, &first, &last);               // even nos to be pushed for first half
+                                    push(&stk, data, &first, &temp);               // even nos to be pushed for first half
                               }
                                     
                         }
@@ -71,7 +70,7 @@ int stack_op(int stk, int n)
                         } 
                         break;
                    case 2:
-                        if(first == n/2)
+                        if(first >= n/2)
                         { 
                               printf("\ninput data (negative odd numbers only):");
                               fflush(stdin);
@@ -118,9 +117,11 @@ void push(int stk[],int data,int *f, int *last)
             printf("\n stack is full. cannot insert !!");
       else 
       {
-            printf("Data inserted successfully.\n");
             stk[*f]= data;
-            *f =  *f + 1;
+            *f = *f + 1;
+            printf("Data inserted successfully.\n");
+            
+            
       }
       
 }
