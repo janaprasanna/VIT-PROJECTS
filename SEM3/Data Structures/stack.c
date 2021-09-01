@@ -99,8 +99,9 @@ void pop(int stk[], int *top)
 
 void display(int stk[], int *top)
 {
-      for(int *i=0; i< top; *i++)
+      printf("\nstack: ");
+      for(int i=0; i< *top; i++)
       {
-            printf("%d  ",stk[*i]);
+            printf("%d ",*(stk+i));
       }
 }
