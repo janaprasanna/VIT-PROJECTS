@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include <stdlib.h>
 
-void push(int *, int, int *, int *);
+void push(int *, int, int *, int);
 void pop(int *, int *);
 int stack_op(int , int);
 int main()
@@ -33,27 +33,8 @@ int stack_op(int stk, int n)
                         printf("\ninput data (negative even numbers only):");
                         fflush(stdin);
                         scanf("%d",&data);
-<<<<<<< HEAD
-                        if(data<0)
-                        {
-                              if(data%2 == 0 )
-                              {
-                                    last = n/2;
-                                    push(&stk, data, &first, &last);               // even nos to be pushed for first half
-                              }
-                              else  
-                              {
-                                   
-                                    push(&stk, data, &first, &last);                  // odd nos to be pushed for second half
-                              }
-
-                                    
-                        }
-                            
-=======
                         if(data<0 && data%2==0)
                             push(&stk, data, &first, n);
->>>>>>> 0388b5f3c3247ab378817fe2c18dc21a2344d04b
                         else  
                         {
                               printf("Invalid number.Re - enter!");
@@ -88,11 +69,11 @@ int stack_op(int stk, int n)
             
     
 }
-void push(int stk[],int data,int *f, int *l)
+void push(int stk[],int data,int *f, int n)
 {
-      if(*l < 0)
+      if(*f < 0)
             printf("\nstack underflow !!");
-      else if(*f > *l-1)
+      else if(*f > n-1)
             printf("\n stack is full. cannot insert !!");
       else 
       {
