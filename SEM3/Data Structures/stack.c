@@ -1,7 +1,7 @@
 #include<stdio.h>
 #include <stdlib.h>
 
-void push(int *, int, int *, int);
+void push(int *, int, int *, int *);
 void pop(int *, int *);
 void display(int *, int *);
 int stack_op(int  , int);
@@ -22,7 +22,7 @@ int main()
 }
 int stack_op(int stk, int n)
 {
-      int choice, data, first=0, last=n-1;
+      int choice, data, first=0, last=n;
       do
       {
             printf("\n\n\n1.push\n2.pop\n3.View\n4.exit\n\n\n");
@@ -38,12 +38,13 @@ int stack_op(int stk, int n)
                         {
                               if(data%2 == 0 )
                               {
-                                    push(&stk, data, &first, n/2);               // even nos to be pushed for first half
+                                    last = n/2;
+                                    push(&stk, data, &first, &last);               // even nos to be pushed for first half
                               }
                               else  
                               {
-                                    first = n/2;
-                                    push(&stk, data, &first, n);                  // odd nos to be pushed for second half
+                                   
+                                    push(&stk, data, &first, &last);                  // odd nos to be pushed for second half
                               }
 
                                     
@@ -71,11 +72,11 @@ int stack_op(int stk, int n)
             
     
 }
-void push(int stk[],int data,int *f, int n)
+void push(int stk[],int data,int *f, int *l)
 {
-      if(*f < 0)
+      if(*l < 0)
             printf("\nstack underflow !!");
-      else if(*f > n-1)
+      else if(*f > *l-1)
             printf("\n stack is full. cannot insert !!");
       else 
       {
