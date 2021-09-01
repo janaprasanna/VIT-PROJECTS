@@ -10,7 +10,7 @@ class book
       public:
       char book_title[50];
       void addbooks();
-      void viewbooks();
+      void viewbooks(class book B);
       void searchbooks(char str[]);
       void displaybooks();
 };
@@ -22,14 +22,17 @@ void book :: addbooks()
       cout<<"\nEnter Author:";
       gets(author_name);
       cout<<"\nEnter year of publication: ";
+      fflush(stdin);
       gets(year_of_pub);
       cout<<"\nEnter price: Rs.";
       cin>>price;
       cout<<"\n\n";
 }
-void book :: viewbooks()
+void book :: viewbooks(class book B)
 {
-      cout<<"\nBook Name: "<<book_title;
+      for(int i=0;)
+      if(strcmp(book_title, B.book_title)>0)
+      cout<<"\n\nBook Name: "<<book_title;
       cout<<"\nAuthor: "<<author_name;
       cout<<"\nBook price: Rs."<<price;
       cout<<"\nYear of published:  "<<year_of_pub;
@@ -48,8 +51,8 @@ void book :: searchbooks(char name[])
 }
 void book :: displaybooks()
 {
-      cout<<"\n\tBook Details of price < 2000\n";
       cout<<"\n--------------------------------------------------";
+      cout<<"\n\n\tBook Details of price > 2000\n";
       if(price>2000)
       {
             cout<<"\nBook Name: "<<book_title;
@@ -72,26 +75,18 @@ int main()
 
 
 
-      cout<<"\nAdded books:\n";
+      cout<<"\n\nAdded books:";
       B = b[0];
-      for(int i=1;i<n;i++)
+      for(i=1;i<n;i++)
       {
-            for(int j=i;j<n;j++)
-            {
-                  if(strcmp(B.book_title, b[i].book_title)>0)
-                  {
-                        strcpy(temp, b[i].book_title);
-                        strcpy(b[i].book_title, B.book_title);
-                        strcpy(B.book_title, temp);
-                  }
-            }
-            B.viewbooks();
+            b[i].viewbooks(B);
       }
+      
 
 
 
 
-      cout<<"Enter author name :";
+      cout<<"\n\nEnter author name :";
       fflush(stdin);
       gets(name);
       for(int i=0;i<n;i++)
