@@ -54,12 +54,13 @@ class gradegenerator
       union  // anonymous union
             {
                   long int aathar_No;
-                  char Driving_License_No;
-                  char PAN_Card_No;
+                  long int Driving_License_No;
+                  long int PAN_Card_No;
             };
       private:
             float marks1, marks2, marks3, avg; int n;
             char reg_no[10], grade;
+            int choice;
             
       public:
             void validID();
@@ -82,7 +83,7 @@ void gradegenerator :: getmarks(int i)
 }
 void gradegenerator :: validID()
 {
-      int choice;
+      
       cout<<"\nchoose the Gov ID :";
       cout<<"\n1.Aadhar number\n2.PAN card number\n3.Driving license number";
       cin>>choice;
@@ -123,9 +124,22 @@ void gradegenerator :: generategrade()
 void gradegenerator :: display()
 {
       cout<<"\n\nstudent details:\n\n";
-      cout<<"\nGov ID:"<<aathar_No;
+    
       cout<<"\nReg No:"<<reg_no;
+       switch (choice)
+      {
+      case 1:
+            cout<<"\naadhar number: "<<aathar_No;
+            break;
+      case 2:
+            cout<<"\nPAN card number: "<<PAN_Card_No;
+            break;
+      case 3:
+            cout<<"\ndriving license number:" <<Driving_License_No;
+            break;
+      }
       cout<<"\nYour grade:"<<grade;
+      
 }
 
 
