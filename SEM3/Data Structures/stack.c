@@ -3,7 +3,8 @@
 
 void push(int *, int, int *, int);
 void pop(int *, int *);
-int stack_op(int , int);
+void display(int *, int *);
+int stack_op(int  , int);
 int main()
 {
       int  n=0, *stk, result=0;
@@ -24,7 +25,7 @@ int stack_op(int stk, int n)
       int choice, data, first=0, last=n-1;
       do
       {
-            printf("\n\n\n1.push\n2.pop\n3.exit\n\n\n");
+            printf("\n\n\n1.push\n2.pop\n3.View\n4.exit\n\n\n");
             fflush(stdin);
             scanf("%d",&choice);
             switch (choice)
@@ -34,7 +35,20 @@ int stack_op(int stk, int n)
                         fflush(stdin);
                         scanf("%d",&data);
                         if(data<0)
-                            push(&stk, data, &first, n);
+                        {
+                              if(data%2 == 0 )
+                              {
+                                    push(&stk, data, &first, n/2);               // even nos to be pushed for first half
+                              }
+                              else  
+                              {
+                                    first = n/2;
+                                    push(&stk, data, &first, n);                  // odd nos to be pushed for second half
+                              }
+
+                                    
+                        }
+                            
                         else  
                         {
                               printf("Invalid number.Re - enter!");
@@ -45,10 +59,14 @@ int stack_op(int stk, int n)
                   case 2:
                         pop(&stk, &first);
                         break;
+                  
+                  case 3:
+                        display(&stk, &first);
+                        break;
 
             }
             
-      } while (choice<3);
+      } while (choice < 4);
             
             
     
@@ -76,5 +94,13 @@ void pop(int stk[], int *top)
             *top = *top - 1;
             printf("Data popped.");
             printf("Data : %d",stk[*top]);
+      }
+}
+
+void display(int stk[], int *top)
+{
+      for(int *i=0; i< top; *i++)
+      {
+            printf("%d  ",stk[*i]);
       }
 }
