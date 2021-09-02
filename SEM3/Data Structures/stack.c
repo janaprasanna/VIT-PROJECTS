@@ -1,23 +1,3 @@
-/* case 2:
-                        if(first == last/2)
-                        { 
-                              printf("\ninput data (negative odd numbers only):");
-                              fflush(stdin);
-                              scanf("%d",&data);
-                              if(data<0 && data%2!=0)
-                              push(&stk, data, &first, n);
-                              else  
-                              {
-                                    printf("Invalid number.Re - enter!");
-                                    return 0;
-                              } 
-                              break;
-                        }
-                        else  
-                              printf("\nFirst Half of stack is not full.");*/
-
-
-
 #include<stdio.h>
 #include <stdlib.h>
 
