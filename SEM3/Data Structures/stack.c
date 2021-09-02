@@ -24,7 +24,7 @@
 void push(int *, int, int *, int *);
 void pop(int *, int *);
 void display(int *, int *);
-int stack_op(int  , int);
+void stack_op(int *  , int);
 int main()
 {
       int  n=0, *stk, result=0;
@@ -32,15 +32,12 @@ int main()
             printf("\nEnter number of elements:");
             scanf("%d",&n);
             stk = (int*) malloc(n * sizeof(int));
-            do{
-                  result = stack_op(*stk, n);
-            }while(result == 0);
-            
+            stack_op(stk, n);
             
       return 0;
       
 }
-int stack_op(int stk, int n)
+void stack_op(int stk[], int n)
 {
       int choice, data, first = 0, last = n, temp = n/2; 
       do
@@ -54,19 +51,13 @@ int stack_op(int stk, int n)
                         printf("\ninput data (negative even numbers only):");
                         fflush(stdin);
                         scanf("%d",&data);
-                        if(data<0)
+                        if(data<0 && data%2==0)
                         {
-                              if(data%2 == 0 )
-                              {
-                                    push(&stk, data, &first, &temp);               // even nos to be pushed for first half
-                              }
-                                    
+                              push(stk, data, &first, &temp);               // even nos to be pushed for first half
                         }
-                            
                         else  
                         {
                               printf("Invalid number.Re - enter!");
-                              return 0;
                         } 
                         break;
                    case 2:
@@ -75,18 +66,16 @@ int stack_op(int stk, int n)
                               printf("\ninput data (negative odd numbers only):");
                               fflush(stdin);
                               scanf("%d",&data);
-                              if(data<0)
+                              if(data<0 && data%2!=0)
                               {
-                                    if(data%2 != 0 )
-                                    {
-                                          push(&stk, data, &first, &last);               // even nos to be pushed for first half
-                                    }      
+                                    push(stk, data, &first, &last);               // even nos to be pushed for first half
+                                    
                               }
                               
                               else  
                               {
                                     printf("Invalid number.Re - enter!");
-                                    return 0;
+                                    
                               } 
                               break;
                         }
@@ -95,12 +84,14 @@ int stack_op(int stk, int n)
                         break;
                   
                   case 3:
-                        pop(&stk, &first);
+                        pop(stk, &first);
                         break;
                   
                   case 4:
-                        display(&stk, &first);
+                        display(stk, &first);
                         break;
+                  default:
+                        printf("\nInvalid operation!");
 
             }
             
@@ -113,8 +104,12 @@ void push(int stk[],int data,int *f, int *last)
 {
       if(last < 0)
             printf("\nstack underflow !!");
-      else if(*f > *last)
+      else if(*f >= *last)
+      {
             printf("\n stack is full. cannot insert !!");
+            printf("\nfirst:%d", *f);
+      }
+            
       else 
       {
             stk[*f]= data;
