@@ -42,7 +42,7 @@ void postfix(char exp[])
             {
                   while(stack[top] != '(')
                   {
-                      printf("%c " ,pop());
+                        printf("%c " ,pop());
                   }
                         
             }
@@ -76,7 +76,8 @@ void postfix(char exp[])
       }
        do
       {
-          printf("%c " ,pop());
+          if(stack[top]!='(')
+            printf("%c " ,pop());
       }while(top!=-1);
       
 
