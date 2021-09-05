@@ -70,11 +70,16 @@ void Bank_Account :: withdraw()
 {
       cout<<"enter the withdrawal amount: Rs.";
       cin>>amt;
-      if(amt>0.0 && amt<=this->Accnt_bal || Accnt_bal>=0)
+      if(amt>0.0 && amt<=this->Accnt_bal && Accnt_bal>=0)
       {
-            this->Accnt_bal = Accnt_bal - amt;
-            cout<<"\nwithdraw success.";
-            cout<<"\n\nYour Current Balance: Rs."<<Accnt_bal;
+            if(Accnt_bal-amt >0)
+            {
+                  this->Accnt_bal = Accnt_bal - amt;
+                  cout<<"\nwithdraw success.";
+                  cout<<"\n\nYour Current Balance: Rs."<<Accnt_bal;
+            }
+            else
+                  cout<<"\nCannot withdraaw! check your balance.";
       }
       else  
       {
