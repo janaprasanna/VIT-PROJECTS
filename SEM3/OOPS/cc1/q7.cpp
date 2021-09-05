@@ -4,13 +4,15 @@ using namespace std;
 class book
 {
       private:
+            char book_title[50];
             char author_name[50];
             float price;
             char year_of_pub[10];
+
       public:
-      char book_title[50];
       void addbooks();
-      void viewbooks(class book B);
+      void sortbooks(class book B);
+      void viewbooks();
       void searchbooks(char str[]);
       void displaybooks();
 };
@@ -28,14 +30,23 @@ void book :: addbooks()
       cin>>price;
       cout<<"\n\n";
 }
-void book :: viewbooks(class book B)
+void book :: viewbooks()
 {
-      for(int i=0;)
-      if(strcmp(book_title, B.book_title)>0)
-      cout<<"\n\nBook Name: "<<book_title;
-      cout<<"\nAuthor: "<<author_name;
-      cout<<"\nBook price: Rs."<<price;
-      cout<<"\nYear of published:  "<<year_of_pub;
+      cout<<"\nBooks Name:"<<book_title;
+      cout<<"\nAuthor:"<<author_name;
+      cout<<"\nYear of publication:"<<year_of_pub;
+      cout<<"\nprice:Rs."<<price;
+}
+
+void book :: sortbooks(class book b)
+{
+      class book temp;
+      if(strcmp(book_title, b.book_title)>0)        //  abv    Abv
+      {
+            strcpy(temp.book_title, b.book_title);
+            strcpy(b.book_title, book_title );
+            strcpy(book_title, temp.book_title);
+      }
 }
 void book :: searchbooks(char name[])
 {
@@ -48,11 +59,12 @@ void book :: searchbooks(char name[])
            cout<<"\nBook price: Rs."<<price;
            cout<<"\nYear of published:  "<<year_of_pub;
      }
+     else
+            cout<<"\nNo books were found with this author name.";
 }
 void book :: displaybooks()
 {
-      cout<<"\n--------------------------------------------------";
-      cout<<"\n\n\tBook Details of price > 2000\n";
+     
       if(price>2000)
       {
             cout<<"\nBook Name: "<<book_title;
@@ -68,22 +80,31 @@ int main()
       int n;
       cout<<"Enter book count:";
       cin>>n;
+      cout<<"\nAdd books:\n";
       for(int i=0;i<n;i++)
       {
+            cout<<"\n\tBook "<<i+1<<" details:\n";
             b[i].addbooks();
       }
 
-
-
-      cout<<"\n\nAdded books:";
-      B = b[0];
-      for(i=1;i<n;i++)
+      
+      for(int i=0;i<n-1;i++)
       {
-            b[i].viewbooks(B);
+            B = b[i];                      // abcd            efgh          ijkl  
+          for(int j=i+1;j<n;j++)
+          {
+                 B.sortbooks(b[j]);
+          }
+           
       }
       
-
-
+      cout<<"\n\nAdded books:";
+      for(int i=0;i<n;i++)
+      {
+            cout<<"\n\tBook "<<i+1<<" details:\n";
+            b[i].viewbooks();
+      }
+      
 
 
       cout<<"\n\nEnter author name :";
@@ -93,9 +114,14 @@ int main()
       {
             b[i].searchbooks(name);
       }
+
+      cout<<"\n--------------------------------------------------";
+      cout<<"\n\n\tBook Details of price > 2000\n";
       for(int i=0;i<n;i++)
       {
+
             b[i].displaybooks();
       }
+      return 0;
 
 }
