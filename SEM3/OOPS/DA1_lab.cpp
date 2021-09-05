@@ -150,9 +150,88 @@ int main()
 //question 3
 
 #include<iostream>
+#include<string.h>
 using namespace std;
+
+class inventory
+{
+      private:
+            char title[50];
+            char author[50];
+            char publisher[50];
+            char s_title[50], s_author[50];
+            double price;
+            int stock_position;
+            
+      public:
+            void getbooks();
+            void searchbooks(class inventory b[], int n);
+};
+void  inventory :: getbooks()
+{
+      cout<<"\nEnter books name:";
+      fflush(stdin);
+      gets(title);
+      cout<<"\nEnter author :";
+      fflush(stdin);
+      gets(author);
+      cout<<"\nEnter publisher name: ";
+      fflush(stdin);
+      gets(publisher);
+      cout<<"\nEnter price: RS.";
+      cin>>price;
+      cout<<"\nEnter book count:";
+      cin>>stock_position;
+
+}
+void inventory :: searchbooks(class inventory b[], int n)
+{     
+      int borrow_count = 0; double borrow_price = 0;;
+      cout<<"\nEnter books name and author name to search:";
+      fflush(stdin);
+      gets(s_title);
+      gets(s_author);
+      for(int i=0;i<n;i++)
+      {
+            if(strcmp(s_title, b[i].title )==0 && strcmp(s_author, b[i].author)==0)
+            {
+                  cout<<"\nBOOK IS AVAILABLE.";
+                  if(b[i].stock_position>0)
+                  {
+                        cout<<"\nBOOK COUNT: "<<b[i].stock_position;
+                        cout<<"\nEnter no. of books to be borrowed:";
+                        cin>>borrow_count;
+                        b[i].stock_position = b[i].stock_position - borrow_count;
+                        if(b[i].stock_position>0)
+                        {
+                              borrow_price = b[i].price * borrow_count;
+                              cout<<"\nCost: Rs."<<borrow_price;
+                              cout<<"\n\nAvailable Book count:"<<b[i].stock_position;
+                        }
+                        else 
+                              cout<<"\nRequested Number of copies are not available.";
+                  }
+                  else
+                        cout<<"\nSTOCK NOT AVAILABLE. YET TO COME.";
+            }
+            else 
+                  cout<<"\nBOOK IS NOT FOUND IN THE LIBRARY.";
+
+      }
+}
+
 int main()
 {
-      
+      int n;
+      cout<<"\n\tEnter number of books to be added:";
+      cin>>n;
+      class inventory b[n], S;
+      for(int i=0;i<n;i++)
+      {
+            cout<<"\n\tEnter Book "<<i+1<<" details:\n";
+            b[i].getbooks();
+      }
+    
+      S.searchbooks(b, n);
       return 0;
 }
