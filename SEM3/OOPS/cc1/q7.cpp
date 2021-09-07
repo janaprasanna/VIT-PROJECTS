@@ -40,12 +40,12 @@ void book :: viewbooks()
 
 void book :: sortbooks(class book b)
 {
-      class book temp;
+      char temp_title[50];
       if(strcmp(book_title, b.book_title)>0)        //  abv    Abv
       {
-            strcpy(temp.book_title, b.book_title);
+            strcpy(temp_title, b.book_title);
             strcpy(b.book_title, book_title );
-            strcpy(book_title, temp.book_title);
+            strcpy(book_title, temp_title);
       }
 }
 void book :: searchbooks(char name[])
@@ -87,15 +87,14 @@ int main()
             b[i].addbooks();
       }
 
-      
+                            // abcd            efgh          ijkl  
       for(int i=0;i<n-1;i++)
       {
-            B = b[i];                      // abcd            efgh          ijkl  
-          for(int j=i+1;j<n;j++)
-          {
-                 B.sortbooks(b[j]);
-          }
-           
+            B = b[i];
+            for(int j=1;j<n;j++)
+                  B.sortbooks(b[j]);
+            
+            
       }
       
       cout<<"\n\nAdded books:";
