@@ -14,6 +14,8 @@ int main()
       cout<<"\nEnter "<<n<<" elements to the list:";
       for(int i=0;i<n;i++)
             cin>>ptr[i];
+
+            
       cout<<"\nEnter an element to search in the list:";
       cin>>element;
       found = Element_Search(ptr, element);
