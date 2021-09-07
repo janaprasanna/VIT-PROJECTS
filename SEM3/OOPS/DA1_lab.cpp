@@ -69,8 +69,8 @@ int Element_Search(char str[], char search[])
             else  
                   return 0;
       }
-} */
-
+} 
+*/
 
 
 //questin 2
@@ -82,14 +82,14 @@ class Distance
       private:
             float feet, inches;
       public:
-            void getdistance();
+            void getdistance(int N);
             void compare(class Distance cd);
             void display(int flag);
 };
 
-void Distance :: getdistance()
+void Distance :: getdistance(int N)
 { 
-      cout<<"Input Distance 1(feet, inches):";
+      cout<<"Input Distance "<<N<<" (feet, inches):";
       cin>>feet>>inches;
 }
 void Distance :: compare(class Distance cd)
@@ -142,12 +142,12 @@ void Distance :: display(int flag)
 int main()
 {
       class Distance d1, d2;
-      d1.getdistance();
-      d2.getdistance();
+      d1.getdistance(1);
+      d2.getdistance(2);
       d1.compare(d2);
       return 0;
-}
-*/
+}*/
+
 
 //question 3
 
@@ -209,15 +209,19 @@ void inventory :: searchbooks(class inventory b[], int n)
                               borrow_price = b[i].price * borrow_count;
                               cout<<"\nCost: Rs."<<borrow_price;
                               cout<<"\n\nAvailable Book count:"<<b[i].stock_position;
+                              break;
                         }
                         else 
                               cout<<"\nRequested Number of copies are not available.";
+                        break;
                   }
                   else
                         cout<<"\nSTOCK NOT AVAILABLE. YET TO COME.";
+                  break;
             }
             else 
                   cout<<"\nBOOK IS NOT FOUND IN THE LIBRARY.";
+            break;
 
       }
 }
