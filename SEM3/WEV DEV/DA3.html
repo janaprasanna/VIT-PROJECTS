@@ -1,0 +1,185 @@
+<!-- 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <title id="title">20BCA0047</title>
+
+</head>
+<body bgcolor="yellow">
+      <script type="text/javascript">
+            function changetitle(){
+                  var dat = new Date() ;
+                  console.log(dat);
+                  document.getElementById("title").innerHTML = dat;
+            } 
+            function triangle(){
+                  let height = 12;
+                  let base = 5;
+                  document.write("Heigh of the triangle: " +height + "<br>" );
+                  document.write("Base of the triangle: " + base + "<br>");
+                  var area = 1/2 * base * height;
+                  document.write("Area of the triangle: " + area);
+            }
+            function cal_days(){
+                  var one_day, first_date, second_date, 
+                  one_day = 24 * 60 * 60 * 1000;
+                  //define two date object variables with dates inside it  
+                  first_date = new Date("07/15/2021");  
+                  second_date = new Date("11/28/2021");
+
+
+                   //calculate time difference  
+                  var time_difference = second_date.getTime() - first_date.getTime();  
+                    //calculate days difference by dividing total milliseconds in a day  
+                  var days_difference = time_difference / one_day;  
+                  document.write("Number of days between dates <br>" +   
+                         first_date + " and <br>" + second_date + " are: <br>"   
+                         + days_difference + " days<br><br><br>");  
+                         convertemp();
+            }
+            function convertemp(){
+                  var cel, far;
+                  cel = 37;
+                  far = cel + 273;
+                  document.write("<br> <br><br>4. Temp(in celsius: " + cel + "<br> Temp(in farenheight): " + far+" F");
+                  far = 356;
+                  cel = far - 273;
+                  document.write("<br> Temp(in farenheight):"+far+"<br> Temp(celsius): "+cel)+" C<br><br><br><br>";
+                  
+                  math();
+            }
+            function math(){
+                  var num1, num2;
+                  num1 = 45;num2=20;
+                  document.write("<br><br><br>5. Number 1:"+num1+"<br>Number 2:"+num2+"Sum:"+(num2+num1)+"<br>Product:"+(num1*num2)+"<br><br><br>");
+                  duplicates();
+            }
+            function duplicates(){
+                  
+                  const Array = [1, 1, 2, 3, 4, 5, 5]
+                  let duplicates = []
+                  document.write("6. Original Array:"+Array+"<br>");
+                  const tempArray = Array.sort()
+                  document.write("<br><br><br><br><br>Duplicates<br><br>");
+                  for (let i = 0; i < tempArray.length; i++)
+                  {
+                        for(let j = i+1; j< tempArray.length; j++){
+                              if (tempArray[j] === tempArray[i]) 
+                              {
+                              duplicates.push(tempArray[i])
+                              }
+                        }
+                        
+                  }
+
+                  document.write(duplicates); //[ 1, 5 ]
+            }
+            function checkage(){
+                 
+                  var Year_of_birth = yob.value;
+                   var current_year = cy.value;
+                  var age;
+                  age = current_year - Year_of_birth;
+                  document.write("<br><br>Year of Birth: "+Year_of_birth+"<br>Age: "+age);
+            }
+
+      </script>
+      <p>1. To check Data and Time </p>
+      <button onclick="changetitle()" style="color: blue;">click here</button> 
+
+      <p>2. Area of trianle: <a href="javascript:triangle();">click here</a></p> <br>
+      3.<input type="button" value="Days until FAT" onclick="cal_days()"> <br> <br>
+      check age<br> <br> <br>
+     
+            year of birth:<input id="yob" type="number"> <br>
+            current year: <input  type="number" id="cy">
+            <input type="submit" onclick="checkage()">
+     
+      
+      
+</body>
+</html>
+-->
+
+
+<html>
+<head>
+      <title>20BCA0047</title>
+</head>
+<body bgcolor="cyan">
+      <script type="text/javascript">
+            function select_theme(){
+                  var choose_theme = prompt("enter your theme");
+                  if(choose_theme == "halloween")
+                  {
+                        location.replace("/halloween");
+                        var text = document.getElementById("halloween");
+                        text.innerHTML = "Lorem ipsum dolor sit ametconsectetur adipisicing elit. Dicta rerum minima, provident iusto aperiam nulla magnam ea eius, earum eveniet molest Nihil officia facere expedhic quis necessitatibus libero tempora?";
+
+                  }
+                  else if(choose_theme == "valentine")
+                  {
+                        location.replace("/valentine");
+                        var text = document.getElementById("valentine");
+                        text.innerHTML = "Lorem ipsum dolor sit ametconsectetur adipisicing elit. Dicta rerum minima, provident iusto aperiam nulla magnam ea eius, earum eveniet molest Nihil officia facere expedhic quis necessitatibus libero tempora?";   
+                  }
+                  else if(choose_theme == "thanksgiving")
+                  {
+                        location.replace("/thanksgiving");
+                        var text = document.getElementById("thanksgiving");
+                        text.innerHTML = "Lorem ipsum dolor sit ametconsectetur adipisicing elit. Dicta rerum minima, provident iusto aperiam nulla magnam ea eius, earum eveniet molest Nihil officia facere expedhic quis necessitatibus libero tempora?";   
+                  }
+                  else
+                  {
+                        
+                  }
+            };
+            
+            var myVar;
+            var counter = 0;
+            var proverb = ["A bad workman always blames his tools", "Absence makes the heart grow fonder", "Actions speak louder than words", "All good things come to an end"];
+            function myStartFunction() {
+            myVar = setInterval(function(){ alertFunc("First parameter", "Second parameter"); }, 3000);
+            }
+
+            function alertFunc(param1, param2) {
+                  
+            document.getElementById("demo").innerHTML = proverb[counter];
+            counter++;
+                  if(counter>=proverb.length)
+                  {
+                        counter = 0;
+                  }
+           
+            }
+
+            function myStopFunction() {
+            clearInterval(myVar);
+}
+           
+            
+           
+      </script>
+      <p>Choose any of the theme out of the following:</p>
+      <p>Halloween</p>
+      <p>Valantine</p>
+      <p>thanksgiving</p>
+      <input type="button"  onclick="select_theme(), change_text();" value="choose">
+     
+      <div id="changeText"></div>
+      <p id="halloween" style="color: orange ; background-color: black;"></p>
+      <p id="valentine" style="color: white ; background-color: pink;"></p>
+      <p id="thanksgiving" style="color: brown ; background-color: orange;"></p>
+
+      
+
+      <button onclick="myStartFunction()">Start</button> 
+      <button onclick="myStopFunction()">Stop</button>
+
+      <p id="demo"></p>
+
+      
+
+
+</body>
+</html>

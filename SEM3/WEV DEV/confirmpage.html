@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Confirm Payment</title>
+      <script type="text/javascript">
+      var fare;
+      var fromlocation = document.forms["form-main"]["fromloc"].value;
+      var tolocation = document.forms["form-main"]["toloc"].value;
+      var bookingdate = String(document.forms["form-main"]["date"].value);
+      if(fromlocation=="arakkonam"&& tolocation=="vellore")
+      {
+            fare = 3000;
+      }
+      else if(fromlocation=="arakkonam" && tolocation=="chennai")
+      {
+            fare = 3500;
+      }
+      else if(fromlocation=="chennai" && tolocation=="bangalore")
+      {
+            fare = 5000;
+      }
+      else if(fromlocation=="vellore" && tolocation=="bangalore")
+      {
+            fare = 4000;
+      }
+      else{
+
+      }
+      document.getElementsById("from").innerHtml = fromlocation;
+      document.getElementsById("to").innerHtml = tolocation;
+      document.getElementsById("farerate") = fare; 
+
+      </script>   
+</head>
+<body>
+      <div>
+            <h3 align="center">TICKET</h3>
+            From: <p id="from"></p>
+            To: <p id="to"></p>
+            Your Bus Fare: Rs.<p id="farerate"></p>
+            <button type="submit">Pay</button>
+      </div>
+      <!-- payment page for online ticket booking system-->
+
+</body>
+</html>

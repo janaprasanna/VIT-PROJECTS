@@ -1,0 +1,36 @@
+Begin procedure(create_node())
+struct node
+        int data
+        struct node * link; //Self pointer
+end procedure
+
+Given Data: (or assumed data)
+head                                    current
+[500] -> [4 | 1000] -> [5 | 2000] > [6| NULL]
+
+struct node * temp = head; // Stores address of head
+
+while (ttemp->link != NULL) temp = 500 
+x = head->data 
+temp = temp->link;  temp = 1000  || temp = 2000 || 
+
+
+for i = 1 to n:
+    if (x % i ) == 0
+        count++;
+    endif
+end for
+
+    if count  == 2
+
+        print(x)
+        prime++;
+    end if
+    else 
+        print(x, " is not prime ");
+    end else
+
+
+end while
+
+*/

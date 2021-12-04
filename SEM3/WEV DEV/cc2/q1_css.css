@@ -1,0 +1,23 @@
+body {
+      margin: 0;
+       padding: 16px;
+       background-color: #512DA8;
+     }
+     
+     .birthday-card {
+       margin: 40px auto;
+       padding: 16px;
+       max-width: 400px;
+       background-color: white;
+       text-align: center;
+       box-shadow: 0 24px 40px -8px #311B92;
+     }
+     .birthday-card img {
+       width: 100%;
+     }
+     
+    
+     
+    
+     
+     
