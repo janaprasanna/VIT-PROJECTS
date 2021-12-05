@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Download Report</title>
+</head>
+<body>
+      <p id="pn"></p>
+      <p id="pa"></p>
+      <p id="pg"></p>
+      <p>Your health condition: </p>
+
+      <button onclick="window.print()">Download My Report</button>
+      <script type="text/javascript">
+            var usrdata = document.cookie.split(";");
+            var usrname = usrdata[0].split("=");
+            var usrage = usrdata[3].split("=");
+            var usrgender = usrdata[4].split("=");
+            document.getElementById("pn").innerHTML = "Name" + usrname[1];
+            document.getElementById("pa").innerHTML = "Age" + usrage[1];
+            document.getElementById("pg").innerHTML = "Gender:" + usrgender[1];
+
+            // name="jana";ano="1234";psswd="1111";age="18";gender="male";
+
+      </script>
+</body>
+</html>
