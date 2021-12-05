@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #header1 {
+            text-align: center;
+            text-decoration: underline;
+        }
+        body {
+            background-color: beige;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="header1">Driving License Renewal Page</h1>
+    <form action="degree.html" id="mainForm" name="mainForm" method="get" >
+        <p>Enter your Name:</p>
+        <input type="text" id="username" >
+        <p>Identification  Marks: <input type="text" id="ID"></p>
+        <p>Choose the type of Defect:
+        <select name="dis" id="dis">
+            <option value="red">Red Blindness</option>
+            <option value="green">Green Blindness</BLockquote></option>
+            <option value="blind">Night Blindness</option>
+            <option value="deaf">Deaf</option>
+            <option value="dumb">Dumb</option>
+        </select> </p>
+        <input type="submit" id="form1" onclick="myfunction();">
+        <script>
+           
+            function myfunction(){
+            var sname = document.getElementById("username").value;
+            var ID = document.getElementById('ID').value;
+            var defect = document.getElementById('dis').value;
+
+            // using cookie to pass the data to other page(degree.html).
+            document.cookie = 'name=' + sname + ';';
+            document.cookie = 'ID=' + ID + ';';
+            document.cookie = 'defect=' + defect + ';';
+
+            }
+            
+            
+            
+            
+
+        </script>
+        
+    </form>
+</body>
+</html>

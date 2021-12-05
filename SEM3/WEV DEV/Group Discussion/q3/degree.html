@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    p {
+        font-weight: bolder;
+        
+    }
+    form {
+        background-color: tomato;
+    }
+</style>
+<body>
+<form action="thankyou.html">
+<p>Degree of the Defect: 
+    <input type="range" value="1" min="1" max="10" oninput="num.value = this.value"></p>
+    <output id="num">1</output>
+<p id="img"></p>
+
+<p>Choose your Blood Group:</p>
+<p>A -ve: <input type="radio" value="A-" name="bg"></p>
+<p>A +ve: <input type="radio" value="A+" name="bg"></p>
+<p>O -ve: <input type="radio" value="O-" name="bg"></p>
+<p>B +ve: <input type="radio" value="B+" name="bg"></p>
+<p>B -ve: <input type="radio" value="B-" name="bg"></p>
+<p>AB +ve <input type="radio" value="AB+" name="bg"></p>
+<p>AB -ve <input type="radio" value="AB-" name="bg"></p>
+<input type="submit">
+
+</form>
+
+    
+</body>
+<script>
+    alert(document.cookie);
+    // "name=rohan;id=4426;defect=dumb;"
+    // arr.split(';'); // 
+    var arr = document.cookie.split(';');
+    var defect = arr[2].split('=');
+    var def = defect[1];
+    document.getElementById("img").innerHTML = `Your issue: ${def} defect <br>`
+
+    if (def == "red" || def == "green" || def == "blind"){
+        document.body.style.backgroundImage = 'url("eye.jpg")'
+    }
+    else if (def == "deaf")
+    {
+        document.body.style.backgroundImage = 'url("deaf.jpg")'
+    }
+    else if (def == 'dumb')
+    {
+        document.body.style.backgroundImage = 'url("dumb.png")'
+    }
+</script>
+</html>
