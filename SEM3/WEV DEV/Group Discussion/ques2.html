@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>javascript Mouse Events</title>
+</head>
+<style>
+    #header {
+        font-weight: bolder;
+        font-size: large;
+        text-align: center;
+        text-decoration: underline;
+        
+    }
+    #webBlock {
+        background-color: chocolate;
+        color:gainsboro;
+        display:block;
+        width:200px;
+    }
+
+    body {
+        background-color: beige;
+    }
+    p {
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size:medium;
+    }
+</style>
+<body> 
+    
+    <p>A. </p>
+    <p><input type="text" id="tf1" onblur="f1();"></p>
+    <p>B. </p>
+    <p id="eid"></p>
+    <input type="email" id="emailID" onmouseup="f4()" onblur="f5();">
+    <input type="text" id="next">
+    
+    <p>C. </p>
+    <form id="webBlock" action="#" onmouseover="f2();" onmouseout="f3();">
+        <p>Displaying Text:</p>
+        <p id="demo"></p>
+    </form>
+
+</body>
+<script>
+var t1 = document.getElementById("tf1");
+var t2 = document.getElementById("demo");
+var t3 = document.getElementById("emailID");
+var e1 = document.getElementById("eid");
+function f1()
+{
+t1.value = t1.value.toUpperCase();
+
+}
+
+function f2(){
+    t2.innerHTML = "Welcome!";
+    t2.style.backgroundColor = "yellow";
+    
+}
+
+function f3(){
+    t2.innerHTML = "GoodBye!";
+    t2.style.backgroundColor = "green";
+}
+
+function f4(){
+e1.innerHTML= "xyzXYZ123@gmail.com";
+e1.style.backgroundColor = "red";
+}
+
+function f5(){
+let patt = /(^[a-zA-Z0-9]+)@([a-z]+)\.com/;
+alert(t3.value);
+if (patt.test(t3.value)==true){
+    e1.innerHTML ="The Format is correct ";
+    e1.style.backgroundColor = "blue";
+}
+else {
+    e1.innerHTML ="The Format is incorrect";
+}
+
+    
+   
+
+
+}
+    
+</script>
+</html>
