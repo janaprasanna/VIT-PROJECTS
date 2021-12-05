@@ -12,16 +12,22 @@
         
     }
     form {
-        background-color: tomato;
+        background-color: white;
+    }
+    body{
+        background-repeat: no-repeat;
+    }
+    form, p{
+        display: inline-block;
     }
 </style>
 <body>
+
 <form action="thankyou.html">
 <p>Degree of the Defect: 
-    <input type="range" value="1" min="1" max="10" oninput="num.value = this.value"></p>
-    <output id="num">1</output>
-<p id="img"></p>
-
+    <input type="range" value="1" min="1" max="10" oninput="num.value = this.value">
+    <output id="num">1</output></p>
+   <br>
 <p>Choose your Blood Group:</p>
 <p>A -ve: <input type="radio" value="A-" name="bg"></p>
 <p>A +ve: <input type="radio" value="A+" name="bg"></p>
@@ -30,20 +36,23 @@
 <p>B -ve: <input type="radio" value="B-" name="bg"></p>
 <p>AB +ve <input type="radio" value="AB+" name="bg"></p>
 <p>AB -ve <input type="radio" value="AB-" name="bg"></p>
-<input type="submit">
+
+<input type="submit" onclick="thank()">
 
 </form>
+<img src="" alt="">
+<p id="img"></p>
 
-    
 </body>
-<script>
-    alert(document.cookie);
+<script type="text/javascript">
+    //alert(document.cookie);
     // "name=rohan;id=4426;defect=dumb;"
     // arr.split(';'); // 
-    var arr = document.cookie.split(';');
-    var defect = arr[2].split('=');
+    var arr = document.cookie.split(";");
+    var defect = arr[1].split("=");
     var def = defect[1];
-    document.getElementById("img").innerHTML = `Your issue: ${def} defect <br>`
+
+    document.getElementById("img").innerHTML = `<br>`
 
     if (def == "red" || def == "green" || def == "blind"){
         document.body.style.backgroundImage = 'url("eye.jpg")'
@@ -52,9 +61,18 @@
     {
         document.body.style.backgroundImage = 'url("deaf.jpg")'
     }
-    else if (def == 'dumb')
+    else if (def == "dumb")
     {
-        document.body.style.backgroundImage = 'url("dumb.png")'
+        document.body.style.backgroundImage = 'url("dumb.png")' 
+    }
+    else
+    {
+
+        document.getElementById("img").innerHTML = def;
+    }
+    function thank()
+    {
+        alert("Thank you. your response has been submitted");
     }
 </script>
 </html>
