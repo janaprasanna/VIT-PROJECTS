@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title><u>OPD Registration form</u></title>
+      <style type="text/css">
+            body{
+                  border: 2px solid black;
+                  align-content: center;
+                  background-color: #C3E3EE;
+                  padding: 10px;
+            }
+            #form1{
+                  border: 1px solid black;
+                  width: 500px;
+                  padding-left: 10px;
+            }
+            #form2{
+                  border: 1px solid black;
+                  width: 500px;
+                  padding-left: 10px;
+            }
+            #form3{
+                  border: 1px solid black;
+                  width: 500px;
+                  padding-left: 10px;
+            }
+            #form4{
+                  border: 1px solid black;
+                  width: 500px;
+                  padding-left: 10px;
+            }
+            
+      </style>
+</head>
+<body>
+      <h2 align="center"><p>OPD Registration form</p></h2>
+     <form action="report.html" method="GET" id="form1">
+            <p>Step 1: Verify Mobile number</p>
+            <label for="Mobile">Mobile Number: </label> <br>
+            <input type="number"> <br>
+            <p>step 2: choose Hospital:</p>
+            State: <br>
+            <input type="text" name="state" > <br>
+            Choose Hospital: <br>
+            <select >
+                  <option value="CHennai GH">Chennai GH</option>
+                  <option value="Vellore GH">Vellore GH</option>
+                  <option value="CMC Hospital"><CMC Hospital/option>
+                  <option value="MIOT Hospital">MIOT Hospital</option>
+            </select>
+            <p>Step 3: Choose Date of appointment:</p>
+            <label for="state">Date: </label> <br>
+            <input type="date" name="date" > <br>
+            <p>Step 4: Verify Aadhar Number: </p>
+            <label for="aadhar">Enter Aadhar No:</label><br>
+            <input type="number" name="Aadhar_no" maxlength="10">
+            <p>Choose a password: </p>
+            <input type="password" id="password" name="password" required placeholder="Enter Password" size="10"/>
+            <input type="submit" onclick="saysubmit(); location.href='report.html">
+       <!--<button type="submit"  onclick="saysubmit();location.href='report.html'" >Submit</button> -->
+     </form>
+
+
+       <script type="text/javascript"">
+
+            var countappointment = 1;
+            const currentdate1 = new Date;
+            let tempdate =  currentdate1.getDay();
+
+            function saysubmit()
+            {
+                  var chkdate = new Date;
+                  var isdate = chkdate.getDay();
+                  if(isdate == tempdate)
+                  {
+                        if(countappointment<=10)
+                        {
+                              alert("your appointment has been submitted successfully!");
+                              ++countappointment;
+                        }
+                        else
+                        {
+                              tempdate++;
+                              alert("Maximum No. of appointments reached for today!! try again tomorrow.");
+                              //countappointment = 0;
+                        }
+                  }
+                  if(isdate != tempdate)
+                  {
+                        alert("Maximum No. of appointments reached for today!! try again tomorrow."); 
+                  }
+            }
+      </script>
+
+
+      
+</body>
+</html>

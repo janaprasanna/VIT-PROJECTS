@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Your Report</title>
+</head>
+<body>
+      <form action="downreport.html" method="POST">
+            <p>Enter your Aadhar number:</p>
+            <input type="number" name="Aadhar_no" id="Aadhar_no" >
+            <p>Password: </p>
+            <input type="password" name="psswd" id="psswd" >
+            <input type="submit" onclick="chkcred()" >
+      </form>
+
+      <p id="demo"> </p>
+      
+      <script type="text/javascript">
+
+           function chkcred()
+           {
+                 var ano = document.getElementById("Aadhar_no").value;
+                 var pwd = document.getElementById("psswd").value;
+
+                  var ussrdata = new URLSearchParams(location.search);
+                  for(const [key, value] of ussrdata)
+                  {
+                        if(key == "Aadhar_no")
+                        {
+                              if(document.getElementById("Aadhar_no").value == value)
+                                    alert("login successful");
+                              else{
+                                    alert("invalid credentials");
+                              }
+                        }
+                        // document.write(key, value);
+                  }
+                  
+                  //var user_data = document.cookie.split(";");
+                  //var ussr_aadhar = user_data.split("=")
+                  //alert(ussr_aadhar);
+                //  var usr_aadhar = document.getElementById('Aadhar_no');
+                 // var usr_psswd = document.getElementById('psswd');
+                  if(user_data[0] == usr_aadhar && user_data[1] == usr_psswd)
+                  {
+                        
+                  }
+                  else{
+                        alert("Invalid Credentials!!");
+                  }
+                  
+           }
+      </script>
+</body>
+</html>
