@@ -1,1 +1,2 @@
-hello, a sample text to check write mode in fileshello this is jana prasanna am currently studying bca in vit vellore this is a sample text to test the files concept.
+hello this is a sample text to count the number of i and u in a given  paragraph.
+done by jana prasanna g studying bca in vit vellore.
