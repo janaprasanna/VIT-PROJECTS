@@ -1,8 +1,8 @@
 #include<iostream>
-using namespace std;
 #include<conio.h>
 #include<stdio.h>
 #include<string.h>
+using namespace std;
 class stock
 {
                char author[50];
