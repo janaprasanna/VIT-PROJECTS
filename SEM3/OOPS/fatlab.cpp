@@ -1,9 +1,10 @@
 #include<iostream>
 using namespace std;
 
+template<class T>
 class Matrix
 {
-        int a[3][3];
+        T a[3][3];
     public:
         void accept();
         void display();
@@ -11,7 +12,8 @@ class Matrix
          void operator -(Matrix x);
           void operator *(Matrix x);
 };
-void Matrix::accept()
+template<class T>
+void Matrix<T>::accept()
 {
         cout<<"\n Enter Matrix Element (3 X 3) : \n";
         for(int i=0; i<3; i++)
@@ -23,7 +25,8 @@ void Matrix::accept()
                 }
         }
 }
-void Matrix::display()
+template<class T>
+void Matrix<T>::display()
 {
         for(int i=0; i<3; i++)
         {
@@ -35,9 +38,10 @@ void Matrix::display()
                 cout<<"\n";
         }
 }
-void Matrix::operator +(Matrix x)
+template<class T>
+void Matrix<T>::operator +(Matrix x)
 {
-        int mat[3][3];
+        T mat[3][3];
         for(int i=0; i<3; i++)
         {
                 for(int j=0; j<3; j++)
@@ -56,10 +60,10 @@ void Matrix::operator +(Matrix x)
                 cout<<"\n";
         }
 }
-
-void Matrix::operator -(Matrix x)
+template<class T>
+void Matrix<T>::operator -(Matrix x)
 {
-        int mat[3][3];
+        T mat[3][3];
         for(int i=0; i<3; i++)
         {
                 for(int j=0; j<3; j++)
@@ -78,8 +82,8 @@ void Matrix::operator -(Matrix x)
                 cout<<"\n";
         }
 }
-
-void Matrix::operator *(Matrix x)
+template<class T>
+void Matrix<T>::operator *(Matrix x)
 {
         int mat[3][3];
         for(int i=0; i<3; i++)
@@ -102,7 +106,7 @@ void Matrix::operator *(Matrix x)
 }
 int main()
 {
-        Matrix m,n; 
+        Matrix<int> m,n; 
         m.accept();       // Accepting Rows
         n.accept();      // Accepting Columns
         cout<<"\n First Matrix : \n\n";
