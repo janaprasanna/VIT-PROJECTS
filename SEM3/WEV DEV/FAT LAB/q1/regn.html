@@ -1,0 +1,37 @@
+
+<html>
+<head>
+	<title>20BCA0047</title>
+</head>
+<body bgcolor="#97D2F0">
+	<form method="POST" id="loginform" action="suduko.html" >
+      <h3 align="center">Registration Page</h3>
+      <div align="center" style="background-color: #E3E6E7;" >
+      <div   style=" display: inline-block; border: 3px solid #999999; padding-top: 20px;padding-bottom: 20px;" >
+        <label for="email">First Name</label>
+        <input type="text" name="fname" required size="30"/>
+        
+        <br><br><br><br>
+        <label for="email">Email id</label>
+        <input type="email"  name="email" required placeholder="Enter Email" size="30"/>
+        <br><br><br><br>
+        <label for="email">Age</label>
+        <input type="range" value="10" min="9" max="19" oninput="num.value = this.value">
+		<output id="num">10</output><br><br><br><br>
+          <label for="gender">Gender</label>
+        <select>
+        	<option selected>Male</option>
+        	<option >Female</option>
+        	<option >Other</option>
+        </select><br><br><br><br>
+
+       
+        <div align="center">
+          <button  type="submit">Register</button>
+        </div>
+      </div>
+      </div>
+    </form>
+   
+</body>
+</html>

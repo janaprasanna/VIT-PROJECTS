@@ -1,0 +1,78 @@
+<!DOCTYPE html> 
+<html>
+      <title>20BCA0047</title>
+<head> 
+      <title>Books Details</title>
+</head> <h1>Books Catalogue</h1> <br>
+ <body>
+      <table border="1" cellspacing="0"> 
+            <tr>
+                  <th>Book Name</th>
+                  <th>Books issuer</th>
+                  <th>Return Date</th>
+            </tr>
+            <tr>
+                  <td>Book 1 </td>
+                  <td>XYZ</td>
+                  <td id="rd1">02 - 04 - 2021</td>
+            </tr> 
+            <tr>
+                  <td>Book 2 </td>
+                  <td>PQR</td>
+                  <td id="rd2">06 - 04 - 2021</td>
+                 
+            </tr>
+            <tr>
+                  <td>Book 3 </td>
+                  <td>ABC</td>
+                  <td id="rd3">10 - 12 - 2021</td>
+            
+            </tr>
+            
+      </table> 
+
+      <p id="demo"></p>
+
+
+
+
+      <script type="text/javascript">
+     
+      var currentdate = new Date;
+      document.write(currentdate);
+            for(var i=1;i<4;i++)
+            {
+                  var return_date = document.getElementById("rd"+i).value;
+            return_date = new Date(return_date);
+                  if(return_date.getTime() > currentdate.getTime())
+                  {
+                        alert("BOOK Name: "+ bn "<br>");
+                        
+                        alert("you have exceeded your return date!!");
+                        alert("Pay Rs.3");
+                  }
+
+
+            }
+
+            // timer
+            var countDownDate = new Date("Dec 9, 2021 15:37:25").getTime();
+
+            var x = setInterval(function() {
+            var now = new Date().getTime();
+    
+            var distance = countDownDate - now;
+            
+            var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+          
+            if (distance > 10) {
+            clearInterval(x);
+           document.getElementById("demo").innerHTML = "ISSUE DATE EXPIRED";
+            }
+            }, 1000);
+      </script>
+</body>
+</html>
