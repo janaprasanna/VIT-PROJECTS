@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document</title>
+</head>
+<body>
+      <form action="#" id="myform">
+            Name:
+            <input type="text" value="name" id="un"> <br>
+            sex:
+            <input type="text" value="others"><br>
+            age: 
+            <input type="number" value="age" id="ua"> <br>
+            <input type="submit" >
+      </form>
+      <button onclick="ex()">try it</button>
+
+      <p id="demo"></p>
+      <p id="demo2"></p>
+      <script type="text/javascript">
+                 
+            function ex(){
+                  var name, sex;
+                  name = document.getElementById("myform").elements[0].value;
+                   sex = document.getElementById("myform").elements[1].value;
+                   //document.write("sex from form= " + sex);
+                 // document.getElementById("demo").innerHTML = name;
+                 // document.write(document.myform.un.value);
+                 // var name2 = form.elements["un"];
+                //   document.write(name2);
+
+                   document.cookie = "username=" + name + ";" ;
+                   document.cookie =  "sex=" + sex + ";" ;
+                   getcookie();
+                   
+            }
+
+            function getcookie(){
+                  var arr = document.cookie;
+                  document.write("cookies: " + arr);
+
+            }
+
+            
+      </script>
+</body>
+</html>

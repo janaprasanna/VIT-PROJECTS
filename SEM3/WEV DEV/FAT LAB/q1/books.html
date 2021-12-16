@@ -14,7 +14,7 @@
             <tr>
                   <td>Book 1 </td>
                   <td>XYZ</td>
-                  <td id="rd1">02 - 04 - 2021</td>
+                  <td id="rd1">02 - 04 - 2021</td>  
             </tr> 
             <tr>
                   <td>Book 2 </td>
@@ -37,17 +37,17 @@
 
 
       <script type="text/javascript">
-     
+     var return_date; // mm/dd/yyyy
       var currentdate = new Date;
       document.write(currentdate);
             for(var i=1;i<4;i++)
             {
-                  var return_date = document.getElementById("rd"+i).value;
-            return_date = new Date(return_date);
+                  return_date = document.getElementById();
+                  document.write("return date= "+ return_date);
+                  return_date = new Date(return_date);
                   if(return_date.getTime() > currentdate.getTime())
                   {
-                        alert("BOOK Name: "+ bn "<br>");
-                        
+                        alert("BOOK Name: " + bn + "<br>");
                         alert("you have exceeded your return date!!");
                         alert("Pay Rs.3");
                   }
