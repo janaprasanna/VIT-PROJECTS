@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>20BCA0047</title>
+      <style type="text/css">
+            table {
+                  border-collapse: collapse;
+                  width: 80%;
+                  font-size: 10px;
+            }
+            
+            th, td {
+                  text-align: left;
+                  padding: 8px;
+            }
+            
+            tr:nth-child(even) {
+                  background-color: gray;
+            }
+            tr:nth-child(odd) {
+                  background-color: white;
+            }
+            #myform{
+                  width: 200px;
+                  height: 200px;
+                  padding: 10px;
+                  border: 3px solid black;
+                  align-content: center;
+            }
+            input[type=text] {
+            border: 2px solid red;
+            border-radius: 4px;
+            }
+            input[type=number] {
+            border: 2px solid lightgreen;
+            border-radius: 4px;
+            }
+      </style>
+</head>
+<body bgcolor="#97D2F0"> 
+      <h1 align="center"><u>Web Store</u></h1>
+      <h2 align="center"><u>Services Offered</u></h2>
+      <ul>
+            <li>Rental charges</li>
+            <table border="6">
+                  <tr>
+                        <th>Platforms</th>
+                        <th>Costs(Rs)</th>
+                  </tr>
+                  <tr>
+                        <td>Linux</td>
+                        <td>20/hr</td>
+                  </tr>
+                  <tr>
+                        <td>Windows</td>
+                        <td>38/hr</td>
+                  </tr>
+                  <tr>
+                        <td>Macintosh</td>
+                        <td>60/hr</td>
+                  </tr>
+
+            </table>
+            <li>Hours of Operation</li>
+            <li>Payment forms: </li>
+            <ul>
+                  <li>Online banking</li>
+                  <li>cash</li>
+                  <li> Debit/Credit card</li>
+            </ul>
+            <br><br><br>
+      </ul>
+      <h3 align="center"><u>Price Calculation</u></h3>
+      <form action="#" id="myform">
+            Choose your Platform: <br>
+            <input type="text" name="platform" id="platform" value="Linux"> <br><br>
+            Payment Method: 
+            <input type="text" name="pm" id="pm" value="COD">
+            <br>
+            <br>
+            Enter the Number of Hours used:
+            <input type="number" name="hrs" id="hrs" value="0"> <br><br>
+            <button onclick="cal_price()">Calculate</button>
+
+      </form>
+
+      <script type="text/javascript">
+           cal_price()
+           {
+                  var hrs_used = document.getElementById("myform").elements[2].value;
+                  document.write(hrs_used);
+            var totalcost;
+            var amt ;
+            var platorm = document.getElementById("myform").elements[0].value;
+            document.write(platform);
+            if(platform=="Macintosh")
+                  {
+                        amt = 60;
+                  }
+                  else if(platform=="windows")
+                  {
+                        amt = 38;
+                  }
+                  else{
+                        amt = 20;
+                  }
+                  totalcost = amt * hrs_used;
+                  alert("Your Total Cost: " + totalcost);
+           }
+      </script>
+</body>
+</html>
